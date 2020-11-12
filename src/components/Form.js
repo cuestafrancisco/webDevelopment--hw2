@@ -9,18 +9,19 @@ class Form extends Component
         this.state = {  name:"", URL:"" }
     }
     handleChange = event => 
-    { /* TODO - Logic for changing state based on form changes */
+    { /* TODO - Logic for changing state based on form changes 
+        //takes input in the name form
+        */
         this.setState ({ 
-            name: event.target.value,
-            URL: event.target.value 
+            name: event.target.value,   
         })
     }
     urlChange = (event) => 
     {
         this.setState(
             {
-                name: event.target.value,
-             URL: event.target.value
+             
+             URL: event.target.value,  //takes input in the URL: form
             })
     }
     onFormSubmit = (event) => 
@@ -33,14 +34,16 @@ class Form extends Component
           };
         /*TODO - Logic for calling props to handle submission and setting state changes */
         this.props.handleSubmit(submission);
-        this.setState({name: "", URL: ""})
+        this.setState({name: "", URL: ""})  // clears input after clicking submit
         
     }
 
     
     render() 
     {   return(<form onSubmit={this.onFormSubmit} >
-                {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
+                {/* TODO - Logic for returning a form element with labels and inputs for link name and URL 
+                //type and value are default attributes 
+                // data passisng("name" )*/}
                  < label for = "name" > Name</label>
                  < input type = "text"  value={this.state.name} onChange={this.handleChange} />
                  < label for  = "url" > URL</label >

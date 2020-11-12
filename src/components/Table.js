@@ -1,8 +1,9 @@
 import React from 'react';
 
-
+//three separate components
 
 const TableHeader = () => { 
+    
     // boilerplate table header functional component
     return (
         <thead>
@@ -18,6 +19,9 @@ const TableHeader = () => {
 const TableBody = props => { 
     // boilerplate table body functional component 
     // we use Array.map to create table rows from LinkData passed via props
+
+    //pass all the data  to properties name and url
+
     const rows = props.linkData.map((row, index) => {
         return (
             <tr key={index}>
@@ -34,7 +38,8 @@ const TableBody = props => {
 const Table = (props) => {
     const { linkData, removeLink } = props;
         /*TODO - return <table> component, TableHeader and TableBody  */
-
+        //return table components 
+        //table header and tablebody has a relationship to the link container
         return(
             <table>
     
